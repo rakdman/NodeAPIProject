@@ -16,11 +16,4 @@ connection.connect((err)=>{
   console.log('Database connected');
 })
 
-// connection.query('SELECT * AS solution', function (err, rows) {
-//   if (err) throw err
-
-//   console.log('The solution is: ', rows[0].solution)
-// })
-
-// connection.end()
 module.exports=connection;

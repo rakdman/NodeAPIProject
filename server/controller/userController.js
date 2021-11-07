@@ -26,9 +26,8 @@ module.exports={
     
      createUser: (req,res) => {
         
-            let {user_name,street_name,city_name,postal_code}=req.body;
-            // let user=await database.query(`INSERT INTO users ("user_name","street_name","city_name","postal_code") VALUES("${user_name}","${street_name}","${city_name}","${postal_code}")`);
-            database.query("INSERT INTO `users` (`user_name`, `street_name`, `city_name`,`postal_code`) VALUES ( '" + user_name + "', '" + street_name + "' , '" + city_name + "', '" + postal_code + "')",(err,result)=>{
+            let {full_name,street_name,city_name,postal_code}=req.body;
+               database.query("INSERT INTO `users` (`full_name`, `street_name`, `city_name`,`postal_code`) VALUES ( '" + full_name + "', '" + street_name + "' , '" + city_name + "', '" + postal_code + "')",(err,result)=>{
                 if(err) console.log(err)
                 else {
                     res.json({message:"User Created"})
@@ -41,10 +40,10 @@ module.exports={
 
         updateUser: (req,res) => {
         
-            let {user_name,street_name,city_name,postal_code}=req.body;
+            let {full_name,street_name,city_name,postal_code}=req.body;
             let id=req.params.id;
           
-            database.query("UPDATE `users` SET user_name=" +'"'+  user_name   + '", ' + "street_name=" + '"' + street_name+ '"' +", city_name=" + '"'+ city_name+ '"' + ", postal_code="+ '"' +postal_code + '"'+ " WHERE ID="+'"'+id +'"'   ,(err,result)=>{
+            database.query("UPDATE `users` SET full_name=" +'"'+  full_name   + '", ' + "street_name=" + '"' + street_name+ '"' +", city_name=" + '"'+ city_name+ '"' + ", postal_code="+ '"' +postal_code + '"'+ " WHERE ID="+'"'+id +'"'   ,(err,result)=>{
                 if(err) console.log(err)
                 else {
                     res.json({message:"User Details Updated"})

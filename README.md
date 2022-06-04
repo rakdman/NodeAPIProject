@@ -1,6 +1,6 @@
 # NodeAPIProject
 
-This project is a learning project where token based RESTful APIs were developed using NodeJS and MYSQL.
+This project is a learning project where JWT token based RESTful APIs are developed using NodeJS and MYSQL.
 
 Screen shots:
 
